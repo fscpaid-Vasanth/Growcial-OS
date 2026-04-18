@@ -92,7 +92,7 @@ function AppRoutes() {
       <Route path="/" element={<LandingPage />} />
       <Route
         path="/login"
-        element={user ? <Navigate to="/dashboard" replace /> : <LoginPage />}
+        element={user ? <Navigate to="/connect" replace /> : <LoginPage />}
       />
       <Route path="/privacy" element={<PrivacyPage />} />
       <Route path="/delete-data" element={<DeleteDataPage />} />
@@ -124,7 +124,7 @@ function AppRoutes() {
             <DashboardLayout>
               <Routes>
                 <Route path="/dashboard" element={<DashboardPage />} />
-                <Route path="*" element={<Navigate to="/dashboard" replace />} />
+                <Route path="*" element={<Navigate to="/connect" replace />} />
               </Routes>
             </DashboardLayout>
           </ProtectedRoute>

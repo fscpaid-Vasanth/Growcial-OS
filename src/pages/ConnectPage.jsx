@@ -85,14 +85,7 @@ export default function ConnectPage() {
             <div className="cp__name">{displayName}</div>
             <div className="cp__badge"><span className="cp__badge-dot"></span> Growth Score: 0</div>
           </div>
-          <button className="cp__logout-btn g-btn" onClick={handleLogout} title="Sign Out">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
-              <polyline points="16 17 21 12 16 7"></polyline>
-              <line x1="21" y1="12" x2="9" y2="12"></line>
-            </svg>
-            <span>Logout</span>
-          </button>
+          </div>
         </div>
 
         {/* Top Center — Title */}
@@ -177,6 +170,16 @@ export default function ConnectPage() {
           </button>
         </div>
       </div>
+
+      {/* Global Utility Actions */}
+      <button className="cp__logout-fixed g-btn" onClick={handleLogout} title="Sign Out">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+          <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+          <polyline points="16 17 21 12 16 7"></polyline>
+          <line x1="21" y1="12" x2="9" y2="12"></line>
+        </svg>
+        <span>Logout</span>
+      </button>
     </div>
   );
 }
