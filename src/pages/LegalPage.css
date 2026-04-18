@@ -1,0 +1,126 @@
+.legal-page {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.legal-page__container {
+  width: 100%;
+  max-width: 800px;
+  max-height: 85vh;
+  display: flex;
+  flex-direction: column;
+  animation: fadeIn 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.legal-page__card {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden; /* Important to contain the scrollable body */
+  background: var(--bg-card);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: 0 12px 64px rgba(0, 0, 0, 0.5);
+}
+
+.legal-page__header {
+  padding: 32px 40px 24px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.legal-page__title {
+  font-size: 1.75rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.legal-page__body {
+  padding: 40px;
+  overflow-y: auto;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--text-2);
+}
+
+.legal-page__body::-webkit-scrollbar {
+  width: 6px;
+}
+
+.legal-page__body::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.legal-page__body::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 10px;
+}
+
+.legal-page__body h2 {
+  color: var(--text);
+  font-size: 1.25rem;
+  margin: 32px 0 16px;
+  font-weight: 700;
+}
+
+.legal-page__body p {
+  margin-bottom: 20px;
+}
+
+.legal-page__body ul {
+  margin-bottom: 24px;
+  padding-left: 20px;
+}
+
+.legal-page__body li {
+  margin-bottom: 8px;
+}
+
+.legal-page__footer {
+  padding: 20px 40px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  background: rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.legal-page__back-btn {
+  font-size: 0.85rem;
+  color: var(--text-3);
+  transition: all var(--transition);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.legal-page__back-btn:hover {
+  color: var(--pink);
+  transform: translateX(-4px);
+}
+
+.legal-page__last-updated {
+  font-size: 0.75rem;
+  color: var(--text-3);
+  font-style: italic;
+}
+
+@media (max-width: 640px) {
+  .legal-page__header, .legal-page__body, .legal-page__footer {
+    padding: 24px;
+  }
+  .legal-page__title {
+    font-size: 1.5rem;
+  }
+}

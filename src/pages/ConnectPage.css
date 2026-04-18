@@ -15,6 +15,23 @@
 .cp__name { font-weight: 600; font-size: 0.8rem; }
 .cp__badge { font-size: 0.6rem; color: var(--text-2); display: flex; align-items: center; gap: 4px; }
 .cp__badge-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--green); }
+.cp__logout-btn {
+  margin-left: auto;
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-3);
+  transition: all var(--transition);
+  border: 1px solid transparent;
+}
+.cp__logout-btn:hover {
+  background: rgba(239, 68, 68, 0.1);
+  color: #ef4444;
+  border-color: rgba(239, 68, 68, 0.2);
+}
 
 /* Header — Top Center */
 .cp__header { grid-column: 2; grid-row: 1; text-align: center; align-self: center; }

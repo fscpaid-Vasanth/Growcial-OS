@@ -71,7 +71,13 @@ export default function LoginPage() {
           </button>
 
           <footer className="login__footer">
-            <p className="login__footer-text">By continuing, you agree to Growcial OS Terms.</p>
+            <div className="login__footer-links">
+              <span onClick={() => navigate('/terms')} className="login__footer-link">Terms</span>
+              <span className="login__footer-divider"></span>
+              <span onClick={() => navigate('/privacy')} className="login__footer-link">Privacy</span>
+              <span className="login__footer-divider"></span>
+              <span onClick={() => navigate('/delete-data')} className="login__footer-link">Data Deletion</span>
+            </div>
             <div className="login__status">
               <span className="login__status-dot"></span>
               AI Engine: Online

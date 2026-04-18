@@ -8,6 +8,9 @@ import ConnectPage from './pages/ConnectPage';
 import ScanPage from './pages/ScanPage';
 import AccountInsightsPage from './pages/AccountInsightsPage';
 import CreateStudioPage from './pages/CreateStudioPage';
+import PrivacyPage from './pages/PrivacyPage';
+import DeleteDataPage from './pages/DeleteDataPage';
+import TermsPage from './pages/TermsPage';
 
 class ErrorBoundary extends Component {
   constructor(props) {
@@ -71,10 +74,16 @@ function AppRoutes() {
 
   return (
     <Routes>
+      {/* Public Pages */}
       <Route
         path="/login"
         element={user ? <Navigate to="/" replace /> : <LoginPage />}
       />
+      <Route path="/privacy" element={<PrivacyPage />} />
+      <Route path="/delete-data" element={<DeleteDataPage />} />
+      <Route path="/terms" element={<TermsPage />} />
+
+      {/* Protected Area & App Shell */}
       <Route
         path="/*"
         element={
@@ -85,6 +94,7 @@ function AppRoutes() {
                 <Route path="/scan" element={<ScanPage />} />
                 <Route path="/insights/:accountId" element={<AccountInsightsPage />} />
                 <Route path="/create/:type?" element={<CreateStudioPage />} />
+                {/* Internal catch-all for protected area redirects to connect */}
                 <Route path="*" element={<Navigate to="/" replace />} />
               </Routes>
             </main>
