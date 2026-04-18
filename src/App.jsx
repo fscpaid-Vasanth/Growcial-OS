@@ -11,6 +11,9 @@ import CreateStudioPage from './pages/CreateStudioPage';
 import PrivacyPage from './pages/PrivacyPage';
 import DeleteDataPage from './pages/DeleteDataPage';
 import TermsPage from './pages/TermsPage';
+import LandingPage from './pages/LandingPage';
+import DashboardPage from './pages/DashboardPage';
+import Sidebar from './components/Sidebar';
 
 class ErrorBoundary extends Component {
   constructor(props) {
@@ -60,6 +63,17 @@ function ProtectedRoute({ children }) {
   return children;
 }
 
+function DashboardLayout({ children }) {
+  return (
+    <div className="dashboard-layout">
+      <Sidebar />
+      <main className="dashboard-content">
+        {children}
+      </main>
+    </div>
+  );
+}
+
 function AppRoutes() {
   const { user, loading } = useAuth();
 
@@ -75,29 +89,39 @@ function AppRoutes() {
   return (
     <Routes>
       {/* Public Pages */}
+      <Route path="/" element={<LandingPage />} />
       <Route
         path="/login"
-        element={user ? <Navigate to="/" replace /> : <LoginPage />}
+        element={user ? <Navigate to="/dashboard" replace /> : <LoginPage />}
       />
       <Route path="/privacy" element={<PrivacyPage />} />
       <Route path="/delete-data" element={<DeleteDataPage />} />
       <Route path="/terms" element={<TermsPage />} />
 
-      {/* Protected Area & App Shell */}
+      {/* Onboarding — No Sidebar */}
+      <Route
+        path="/connect"
+        element={
+          <ProtectedRoute>
+            <ConnectPage />
+          </ProtectedRoute>
+        }
+      />
+
+      {/* Main Dashboard Area — With Sidebar */}
       <Route
         path="/*"
         element={
           <ProtectedRoute>
-            <main className="main-content" style={{ marginLeft: 0, maxWidth: '100%', padding: 0 }}>
+            <DashboardLayout>
               <Routes>
-                <Route path="/" element={<ConnectPage />} />
+                <Route path="/dashboard" element={<DashboardPage />} />
                 <Route path="/scan" element={<ScanPage />} />
                 <Route path="/insights/:accountId" element={<AccountInsightsPage />} />
                 <Route path="/create/:type?" element={<CreateStudioPage />} />
-                {/* Internal catch-all for protected area redirects to connect */}
-                <Route path="*" element={<Navigate to="/" replace />} />
+                <Route path="*" element={<Navigate to="/dashboard" replace />} />
               </Routes>
-            </main>
+            </DashboardLayout>
           </ProtectedRoute>
         }
       />

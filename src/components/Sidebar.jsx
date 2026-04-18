@@ -20,7 +20,8 @@ import {
 import './Sidebar.css';
 
 const navItems = [
-  { path: '/', icon: LayoutDashboard, label: 'Dashboard' },
+  { path: '/dashboard', icon: LayoutDashboard, label: 'Dashboard' },
+  { path: '/connect', icon: Zap, label: 'Connect' },
   { path: '/analyze', icon: Search, label: 'Analyze' },
   { path: '/suggest', icon: Sparkles, label: 'Suggest' },
   { path: '/create', icon: PenTool, label: 'Create' },

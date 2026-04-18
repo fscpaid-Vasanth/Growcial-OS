@@ -17,15 +17,18 @@
 .cp__badge-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--green); }
 .cp__logout-btn {
   margin-left: auto;
-  width: 28px;
-  height: 28px;
+  padding: 6px 12px;
+  height: auto;
   border-radius: 8px;
   display: flex;
   align-items: center;
-  justify-content: center;
+  gap: 8px;
   color: var(--text-3);
+  font-size: 0.72rem;
+  font-weight: 700;
   transition: all var(--transition);
-  border: 1px solid transparent;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.02);
 }
 .cp__logout-btn:hover {
   background: rgba(239, 68, 68, 0.1);

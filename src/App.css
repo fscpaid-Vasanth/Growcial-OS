@@ -19,6 +19,31 @@
 }
 
 .app-loading p {
-  color: var(--text-muted);
+  color: var(--text-2);
   font-size: 0.9rem;
+}
+
+/* ── Dashboard Layout ── */
+.dashboard-layout {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  background: var(--bg);
+}
+
+.dashboard-content {
+  flex: 1;
+  overflow-y: auto;
+  position: relative;
+  padding: 24px 32px;
+}
+
+@media (max-width: 900px) {
+  .dashboard-layout {
+    flex-direction: column;
+  }
+  .dashboard-content {
+    padding: 16px;
+  }
 }
