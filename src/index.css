@@ -53,9 +53,9 @@ input, select, textarea { font-family: inherit; color: inherit; background: none
   background: var(--bg);
 }
 
-@keyframes float- رموز {
+@keyframes float-symbols {
   0% { transform: translateY(0); }
-  50% { transform: translateY(-5%); x: 20px; }
+  50% { transform: translateY(-5%) translateX(20px); }
   100% { transform: translateY(0); }
 }
 
