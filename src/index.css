@@ -1,0 +1,108 @@
+/* =============================================
+   GROWCIAL OS — Premium Futuristic Design System
+   Notion + Stripe + Linear inspired
+   ============================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+:root {
+  --font: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif;
+  --bg: linear-gradient(135deg, #050510 0%, #0a0b1e 100%);
+  --bg-card: rgba(16, 16, 32, 0.85);
+  --bg-card-hover: rgba(22, 22, 45, 0.95);
+  --bg-glass: rgba(255, 255, 255, 0.04);
+  --border: rgba(236, 72, 153, 0.4);
+  --border-hover: rgba(236, 72, 153, 0.8);
+  --border-glow: rgba(236, 72, 153, 0.6);
+  --text: #ffffff;
+  --text-2: #c5c5e0;
+  --text-3: #8a8a9a;
+  --purple: #8b5cf6;
+  --purple-glow: rgba(139, 92, 246, 0.3);
+  --blue: #3b82f6;
+  --cyan: #22d3ee;
+  --pink: #ec4899;
+  --green: #10b981;
+  --orange: #f97316;
+  --red: #ef4444;
+  --yellow: #eab308;
+  --radius: 14px;
+  --radius-sm: 10px;
+  --radius-xs: 8px;
+  --transition: 200ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+html, body, #root {
+  height: 100vh;
+  overflow: hidden;
+  font-family: var(--font);
+  background: #050510;
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: inherit; text-decoration: none; }
+button { font-family: inherit; cursor: pointer; border: none; background: none; color: inherit; }
+input, select, textarea { font-family: inherit; color: inherit; background: none; border: none; outline: none; }
+
+/* ── Animated Background ── */
+.g-bg {
+  position: fixed; inset: 0; z-index: -1; overflow: hidden;
+  background: var(--bg);
+}
+
+@keyframes float- رموز {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-5%); x: 20px; }
+  100% { transform: translateY(0); }
+}
+
+/* ── Glass Card ── */
+.g-card {
+  background: var(--bg-card);
+  backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+  transition: all var(--transition);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+.g-card:hover { border-color: var(--border-hover); box-shadow: 0 12px 48px rgba(0, 0, 0, 0.6); }
+
+/* ── Button ── */
+.g-btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  padding: 10px 22px; font-weight: 600; font-size: 0.82rem;
+  border-radius: var(--radius-xs); transition: all var(--transition);
+}
+.g-btn--primary {
+  background: linear-gradient(135deg, var(--purple), var(--blue));
+  color: white; box-shadow: 0 4px 20px var(--purple-glow);
+}
+.g-btn--primary:hover { transform: translateY(-1px); box-shadow: 0 6px 30px rgba(139,92,246,0.25); }
+.g-btn--primary:disabled { opacity: 0.4; cursor: not-allowed; transform: none; }
+.g-btn--ghost {
+  border: 1px solid var(--border); color: var(--text-2);
+}
+.g-btn--ghost:hover { border-color: var(--border-hover); color: var(--text); background: var(--bg-glass); }
+
+/* ── Gradient text ── */
+.g-gradient { background: linear-gradient(135deg, var(--purple), var(--cyan)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+
+/* ── Loading spinner ── */
+.g-spinner { width: 18px; height: 18px; border: 2px solid var(--border); border-top-color: var(--purple); border-radius: 50%; animation: g-spin 0.7s linear infinite; }
+@keyframes g-spin { to { transform: rotate(360deg); } }
+
+/* ── App Loading ── */
+.app-loading {
+  height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 16px; background: var(--bg); color: var(--text-2); font-size: 0.85rem;
+}
+.app-loading__spinner { width: 32px; height: 32px; border: 3px solid var(--border); border-top-color: var(--purple); border-radius: 50%; animation: g-spin 0.8s linear infinite; }
+
+/* ── Animations ── */
+@keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+@keyframes pulse-glow { 0%,100% { box-shadow: 0 0 0 0 transparent; } 50% { box-shadow: 0 0 20px var(--purple-glow); } }
+@keyframes shimmer { 0% { background-position: -200% 0; } 100% { background-position: 200% 0; } }
+@keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }

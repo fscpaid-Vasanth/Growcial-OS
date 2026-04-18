@@ -1,0 +1,33 @@
+.bg-icons {
+  position: fixed;
+  inset: 0;
+  z-index: 1; /* Above the gradient background */
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.bg-icon {
+  position: absolute;
+  color: var(--pink);
+  filter: drop-shadow(0 0 15px rgba(236, 72, 153, 0.5));
+  transition: opacity 0.5s ease;
+  z-index: 0;
+}
+
+@keyframes float-v {
+  0%, 100% { transform: translateY(0) rotate(0deg) scale(1); }
+  50% { transform: translateY(-60px) rotate(15deg) scale(1.1); }
+}
+
+@keyframes float-h {
+  0%, 100% { transform: translateX(0) rotate(0deg) scale(1); }
+  50% { transform: translateX(60px) rotate(-15deg) scale(1.1); }
+}
+
+.animate-float-v {
+  animation: float-v linear infinite;
+}
+
+.animate-float-h {
+  animation: float-h linear infinite;
+}
