@@ -98,14 +98,22 @@ function AppRoutes() {
       <Route path="/delete-data" element={<DeleteDataPage />} />
       <Route path="/terms" element={<TermsPage />} />
 
-      {/* Onboarding — No Sidebar */}
+      {/* Full-Screen App Pages (No Sidebar) */}
       <Route
         path="/connect"
-        element={
-          <ProtectedRoute>
-            <ConnectPage />
-          </ProtectedRoute>
-        }
+        element={<ProtectedRoute><ConnectPage /></ProtectedRoute>}
+      />
+      <Route
+        path="/scan"
+        element={<ProtectedRoute><ScanPage /></ProtectedRoute>}
+      />
+      <Route
+        path="/insights/:accountId"
+        element={<ProtectedRoute><AccountInsightsPage /></ProtectedRoute>}
+      />
+      <Route
+        path="/create/:type?"
+        element={<ProtectedRoute><CreateStudioPage /></ProtectedRoute>}
       />
 
       {/* Main Dashboard Area — With Sidebar */}
@@ -116,9 +124,6 @@ function AppRoutes() {
             <DashboardLayout>
               <Routes>
                 <Route path="/dashboard" element={<DashboardPage />} />
-                <Route path="/scan" element={<ScanPage />} />
-                <Route path="/insights/:accountId" element={<AccountInsightsPage />} />
-                <Route path="/create/:type?" element={<CreateStudioPage />} />
                 <Route path="*" element={<Navigate to="/dashboard" replace />} />
               </Routes>
             </DashboardLayout>

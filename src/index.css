@@ -30,6 +30,8 @@
   --radius-sm: 10px;
   --radius-xs: 8px;
   --transition: 200ms cubic-bezier(0.4, 0, 0.2, 1);
+  --sidebar-width: 240px;
+  --sidebar-collapsed: 70px;
 }
 
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }

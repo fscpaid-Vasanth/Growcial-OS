@@ -5,12 +5,12 @@
   left: 0;
   bottom: 0;
   width: var(--sidebar-width);
-  background: var(--bg-base);
-  border-right: 1px solid var(--border-subtle);
+  background: #050510; /* Solid background matching App */
+  border-right: 1px solid var(--border);
   display: flex;
   flex-direction: column;
-  z-index: 100;
-  transition: width var(--transition-base);
+  z-index: 999; /* Ensure it stays above everything */
+  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   overflow: hidden;
 }
 
