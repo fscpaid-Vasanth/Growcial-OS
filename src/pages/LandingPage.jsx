@@ -98,6 +98,7 @@ const LandingPage = () => {
           <div className="landing__footer-links">
             <span onClick={() => navigate('/terms')}>Terms</span>
             <span onClick={() => navigate('/privacy')}>Privacy</span>
+            <span onClick={() => navigate('/delete-data')}>Data Deletion</span>
           </div>
         </div>
       </footer>

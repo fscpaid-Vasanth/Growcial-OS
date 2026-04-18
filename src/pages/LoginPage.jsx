@@ -9,7 +9,7 @@ export default function LoginPage() {
   const handleLogin = async () => {
     try {
       await loginWithGoogle();
-      navigate('/');
+      navigate('/connect');
     } catch (err) {
       console.error('Login error:', err);
     }
