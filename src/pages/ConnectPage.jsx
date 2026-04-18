@@ -85,7 +85,6 @@ export default function ConnectPage() {
             <div className="cp__name">{displayName}</div>
             <div className="cp__badge"><span className="cp__badge-dot"></span> Growth Score: 0</div>
           </div>
-          </div>
         </div>
 
         {/* Top Center — Title */}
